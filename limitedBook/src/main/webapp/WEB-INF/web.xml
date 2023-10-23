@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>limitedBook</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <resource-ref>
+  	<description>Connection</description>
+  	<res-ref-name>jdbc_mariadb2</res-ref-name>
+  	<res-type>javax.sql.DataSource</res-type>
+  	<res-auth>Container</res-auth>
+  </resource-ref>
+  <servlet>
+  	<servlet-name>ProdController</servlet-name>
+  	<servlet-class>limitedBook.controller.prod.ProdController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ProdController</servlet-name>
+  	<url-pattern>*.pr</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>SignController</servlet-name>
+  	<servlet-class>limitedBook.controller.sign.SignController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SignController</servlet-name>
+  	<url-pattern>*.si</url-pattern>
+  </servlet-mapping> 
+  
+</web-app>
